@@ -9,7 +9,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     configs:
       - source: telegraf-config
-        target: /etc/telegraf/telegraf.conf
+        target: /etc/telegraf.conf
     deploy:
       restart_policy:
         condition: on-failure
@@ -43,7 +43,7 @@ services:
 
 configs:
   telegraf-config:
-    file: $PWD/conf/telegraf/telegraf.conf
+    file: $PWD/conf/telegraf.conf
 
 networks:
   tig-net:
